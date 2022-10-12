@@ -1,4 +1,5 @@
 fun main(){
+    var opcio = 0
     var fila = 0
     var columna = 0
     println("Benvinguts al Pescamines!!!")
@@ -10,15 +11,24 @@ fun main(){
     tauler.posaMines(mines)
     tauler.comptaMines()
     tauler.mostraTauler()
+    
     while (true){
-       println ("Introdueix una opció:")
+
+         println ("Introdueix una opció:")
          println ("1. Marcar casella")
          println ("2. Desmarcar casella")
          println ("3. Descobrir casella")
          println ("4. Sortir")
-     
-         val opcio = readLine()!!.toInt() 
-            when (opcio){
+
+          opcio = readLine()!!.toInt()
+
+
+        while (opcio < 1 || opcio > 4){
+            println ("Introdueix una opció correcta:")
+            opcio = readLine()!!.toInt()
+        }
+       
+            when (opcio) {
                 1 -> {
                     println("Introdueix la fila:")
                          fila = readLine()!!.toInt()-1
