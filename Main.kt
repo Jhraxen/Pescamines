@@ -1,4 +1,6 @@
 fun main(){
+    var fila = 0
+    var columna = 0
     println("Benvinguts al Pescamines!!!")
     println("Introdueix la mida del tauler:")
     val n = readLine()!!.toInt()
@@ -19,25 +21,55 @@ fun main(){
             when (opcio){
                 1 -> {
                     println("Introdueix la fila:")
-                    val fila = readLine()!!.toInt()-1
+                         fila = readLine()!!.toInt()-1
+                    while (fila < 0 || fila >= n){
+                        println("La fila ha de ser entre 1 i $n")
+                        println("Introdueix la fila:")
+                         fila = readLine()!!.toInt()-1
+                    }
                     println("Introdueix la columna:")
-                    val columna = readLine()!!.toInt()-1
+                        columna = readLine()!!.toInt()-1
+                    while (columna < 0 || columna >= n){
+                        println("La columna ha de ser entre 1 i $n")
+                        println("Introdueix la columna:")
+                        columna = readLine()!!.toInt()-1
+                    }
                     tauler.marcaMina(fila, columna)
                     tauler.mostraTauler()
                 }
                 2 -> {
                     println("Introdueix la fila:")
-                    val fila = readLine()!!.toInt()-1
+                    fila = readLine()!!.toInt()-1
+                    while (fila < 0 || fila >= n){
+                        println("La fila ha de ser entre 1 i $n")
+                        println("Introdueix la fila:")
+                        fila = readLine()!!.toInt()-1
+                    }
                     println("Introdueix la columna:")
-                    val columna = readLine()!!.toInt()-1
+                    columna = readLine()!!.toInt()-1
+                    while (columna < 0 || columna >= n){
+                        println("La columna ha de ser entre 1 i $n")
+                        println("Introdueix la columna:")
+                        columna = readLine()!!.toInt()-1
+                    }
                     tauler.marcaMina(fila, columna)
                     tauler.mostraTauler()
                 }
                 3 -> {
                     println("Introdueix la fila:")
-                    val fila = readLine()!!.toInt()-1
+                         fila = readLine()!!.toInt()-1
+                    while (fila < 0 || fila >= n){
+                        println("La fila ha de ser entre 1 i $n")
+                        println("Introdueix la fila:")
+                         fila = readLine()!!.toInt()-1
+                    }
                     println("Introdueix la columna:")
-                    val columna = readLine()!!.toInt()-1
+                        columna = readLine()!!.toInt()-1
+                    while(columna < 0 || columna >= n){
+                        println("La columna ha de ser entre 1 i $n")
+                        println("Introdueix la columna:")
+                         columna = readLine()!!.toInt()-1
+                    }
                     tauler.descobreixCasella(fila, columna)
                     if (tauler.hiHaMina(fila,columna)){
                         tauler.descobreixTauler()
